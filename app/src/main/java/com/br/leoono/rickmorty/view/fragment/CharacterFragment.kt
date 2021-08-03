@@ -66,7 +66,8 @@ class CharacterFragment : Fragment(){
         viewModel?.characterModelList?.observe(
             viewLifecycleOwner,
             Observer {
-                setupAdapter(it)
+                viewModel?.setShowLoading(View.GONE)
+                    setupAdapter(it)
             }
         )
     }

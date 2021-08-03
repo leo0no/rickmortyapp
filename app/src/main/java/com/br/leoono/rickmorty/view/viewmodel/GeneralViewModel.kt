@@ -19,6 +19,7 @@ class GeneralViewModel() : ObservableViewModel() {
 
     private var showNoConnectionMessage = View.GONE
     private var showList = View.GONE
+    private var showLoading = View.VISIBLE
     private var initiated = false
     private lateinit var context: Context
 
@@ -37,6 +38,8 @@ class GeneralViewModel() : ObservableViewModel() {
     }
 
     fun reloadData() {
+        characterList.value = null
+        setShowLoading(View.VISIBLE)
         loadData()
     }
 
@@ -62,6 +65,17 @@ class GeneralViewModel() : ObservableViewModel() {
         return this
     }
 
+    @Bindable
+    fun getShowLoading(): Int {
+        return showLoading
+    }
+
+    fun setShowLoading(showLoading: Int): GeneralViewModel? {
+        this.showLoading = showLoading
+        notifyPropertyChanged(BR.showLoading)
+        return this
+    }
+
     private fun loadData() {
         if (ConnectionUtil.isConnected(context)) {
             characterDataLoader.load(characterList, CharacterLoader())
@@ -70,8 +84,8 @@ class GeneralViewModel() : ObservableViewModel() {
         } else {
             setShowNoConnectionMessage(View.VISIBLE)
             setShowList(View.GONE)
+            setShowLoading(View.GONE)
         }
-
     }
 
     private fun updateCharacterModelList(lifecycleOwner: LifecycleOwner) {

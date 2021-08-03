@@ -10,15 +10,26 @@ class CharacterLoader : BaseDataLoader<List<Character>?>() {
 
     override suspend fun load(): List<Character>? {
         val destinationService  = ServiceBuilder.buildService(ApiService::class.java)
-        val requestCall = destinationService.getCharacterList()
-        val response = requestCall.execute()
-        return if (response.isSuccessful) {
-            val characterList  = response.body()
+        var results: ArrayList<Character>? = ArrayList()
+        var requestCall = destinationService.getCharacterList()
+        var response = requestCall.execute()
 
-            characterList?.results
+        if (response.isSuccessful) {
+            val characterList  = response.body()
+            results?.addAll(characterList?.results?.toList()!!)
+
+            for (pageNumber in 2..characterList?.info?.pages!!) {
+                requestCall = destinationService.getCharacterListPage(pageNumber)
+                response = requestCall.execute()
+                if (response.isSuccessful) {
+                    results?.addAll(response.body()?.results?.toList()!!)
+                }
+            }
         } else {
             Timber.d(response.errorBody().toString(), "Error while getting data")
-            null
+            results = null
         }
+
+        return results
     }
 }

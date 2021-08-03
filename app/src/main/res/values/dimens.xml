@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_title_text_size">18sp</dimen>
+    <dimen name="default_elevation_resting">1dp</dimen>
+    <dimen name="default_elevation_float">8dp</dimen>
+    <dimen name="default_corner_radius">2dp</dimen>
+    <dimen name="default_card_content_padding">16dp</dimen>
+    <dimen name="default_small_content_padding">2dp</dimen>
+    <dimen name="default_content_padding">8dp</dimen>
+    <dimen name="default_padding">4dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="id_spacing">12dp</dimen>
+</resources>

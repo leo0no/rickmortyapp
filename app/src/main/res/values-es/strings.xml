@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rick And Morty App</string>
+    <string name="app_title">Rick y Morty</string>
+
+    <string name="data_not_found">No hay datos para mostrar. Comprueba tu conexión a Internet</string>
+    <string name="ok">OK</string>
+
+    <string name="origin">Origen:</string>
+    <string name="gender">Género:</string>
+    <string name="status">Status:</string>
+    <string name="specie">Especie:</string>
+    <string name="location">Localización:</string>
+</resources>

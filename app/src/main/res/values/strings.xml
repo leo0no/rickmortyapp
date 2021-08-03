@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">Rick And Morty App</string>
+    <string name="app_title">Rick e Morty</string>
 
     <string name="data_not_found">Não existem dados a serem exibidos. Verifique sua conexão com a Internet</string>
     <string name="ok">OK</string>
 
     <string name="location">Localização:</string>
     <string name="origin">Origem:</string>
-    <string name="gender">Genero:</string>
+    <string name="gender">Gênero:</string>
     <string name="status">Status:</string>
-    <string name="specie">Especie:</string>
+    <string name="specie">Espécie:</string>
 </resources>

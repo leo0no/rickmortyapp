@@ -9,5 +9,7 @@ data class Character(
     val species: String,
     val status: String,
     val type: String,
-    val url: String
+    val url: String,
+    val location: Location,
+    val origin: Origin
 )

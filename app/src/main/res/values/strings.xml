@@ -4,6 +4,7 @@
     <string name="data_not_found">Não existem dados a serem exibidos. Verifique sua conexão com a Internet</string>
     <string name="ok">OK</string>
 
+    <string name="location">Localização:</string>
     <string name="origin">Origem:</string>
     <string name="gender">Genero:</string>
     <string name="status">Status:</string>

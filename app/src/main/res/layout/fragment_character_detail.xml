@@ -180,6 +180,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:minHeight="240dp"
+                    app:imageUri="@{character.imageURI}"
                     android:src="@drawable/ic_baseline_image_not_supported_24" />
 
             </LinearLayout>

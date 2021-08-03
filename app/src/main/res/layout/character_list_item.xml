@@ -43,6 +43,7 @@
                         android:id="@+id/imgCharacter"
                         android:minHeight="80dp"
                         android:minWidth="80dp"
+                        app:imageUri="@{character.imageURI}"
                         />
 
                     <TextView

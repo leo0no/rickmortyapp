@@ -9,6 +9,8 @@ object DatabindingAdapters {
     @JvmStatic
     @BindingAdapter("app:imageUri")
     fun loadImageWithUri(imageView: ImageView, imageUri: String?){
-        Glide.with(imageView.context).load(Uri.parse(imageUri)).into(imageView)
+        if (imageUri != null) {
+            Glide.with(imageView.context).load(Uri.parse(imageUri)).into(imageView)
+        }
     }
 }
